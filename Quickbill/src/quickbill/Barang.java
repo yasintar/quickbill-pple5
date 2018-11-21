@@ -12,7 +12,31 @@ package quickbill;
 public class Barang {
     private String id;
     private String nama;
-    private Double hargabarang;
+    private double hargabarang;
     private int jumlah;
+
+    public Barang(String id, String nama, double hargabarang, int jumlah)
+    {
+        this.id=id;
+        this.nama=nama;
+        this.hargabarang=hargabarang;
+        this.jumlah=jumlah;
+    }
+    
+    public String getid(){
+        return id;
+    }
+    
+    public String getnama(){
+        return nama;
+    }
+    
+    public double gethargabarang(){
+        return hargabarang;
+    }
+    
+    public int jumlah(){
+        return jumlah;
+    }
     
 }

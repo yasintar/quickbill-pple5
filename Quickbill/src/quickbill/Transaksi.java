@@ -14,4 +14,24 @@ public class Transaksi {
     private String namapelanggan;
     private int jumlahtransaksi;
     
+    
+    public Transaksi(String id, String namapelanggan, int jumlahtransaksi)
+    {
+        this.id=id;
+        this.namapelanggan=namapelanggan;
+        this.jumlahtransaksi=jumlahtransaksi;
+    }
+    
+    public String getid(){
+        return id;
+    }
+    
+    public String getnamapelanggan(){
+        return namapelanggan;
+    }
+    
+    public int getjumlahtransaksi(){
+        return jumlahtransaksi;
+    }
+    
 }

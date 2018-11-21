@@ -16,4 +16,39 @@ public class Kasir {
     private String alamat;
     private String email;
     private String password;
+    
+    public Kasir(String id, String nama, int notelp, String alamat, String email, String password)
+    {
+        this.id=id;
+        this.nama=nama;
+        this.notelp=notelp;
+        this.alamat=alamat;
+        this.email=email;
+        this.password=password;
+    }
+    
+    public String getid(){
+        return id;
+    }
+    
+    public String getnama(){
+        return nama;
+    }
+    
+    public int notelp(){
+        return notelp;
+    }
+    
+    public String alamat(){
+        return alamat;
+    }
+    
+    public String email(){
+        return email;
+    }
+    
+    public String password(){
+        return password;
+    }
+    
 }

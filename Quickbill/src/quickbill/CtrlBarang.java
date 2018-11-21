@@ -11,7 +11,6 @@ package quickbill;
  */
 public class CtrlBarang {
     
-    
     public void addBarang(){
     
     }
@@ -20,14 +19,8 @@ public class CtrlBarang {
     
     }
     
-    public void showListBarang(Window window){
-    Window.show(window);
+    public void showFormBarang(){
+        
     }
-    
-    
-    
-    
-    
-    
     
 }
