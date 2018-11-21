@@ -24,6 +24,12 @@ public class CtrlBarang {
     Window.show(window);
     }
     
+    public void showSearchForm(Barang barang ){
+    
+    
+    
+    }
+    
     
     
     
