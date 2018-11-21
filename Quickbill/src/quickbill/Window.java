@@ -12,7 +12,7 @@ package quickbill;
 public class Window extends javax.swing.JFrame {
 
     private CtrlBarang CB = null;
-
+    private Barang Bar = null;
     /**
      * Creates new form Window
      */
@@ -34,6 +34,7 @@ public class Window extends javax.swing.JFrame {
     private void initComponents() {
 
         viewbutton = new javax.swing.JButton();
+        searchbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +42,13 @@ public class Window extends javax.swing.JFrame {
         viewbutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 viewbuttonMouseClicked(evt);
+            }
+        });
+
+        searchbutton.setText("Search");
+        searchbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchbuttonActionPerformed(evt);
             }
         });
 
@@ -52,13 +60,19 @@ public class Window extends javax.swing.JFrame {
                 .addGap(168, 168, 168)
                 .addComponent(viewbutton)
                 .addContainerGap(177, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchbutton)
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addComponent(viewbutton)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(searchbutton)
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -68,6 +82,10 @@ public class Window extends javax.swing.JFrame {
         
       CB.showListBarang(this);  // TODO add your handling code here:
     }//GEN-LAST:event_viewbuttonMouseClicked
+
+    private void searchbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchbuttonActionPerformed
     
     
     /**
@@ -106,6 +124,7 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton searchbutton;
     private javax.swing.JButton viewbutton;
     // End of variables declaration//GEN-END:variables
 

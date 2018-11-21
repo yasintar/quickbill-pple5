@@ -10,7 +10,7 @@ package quickbill;
  * @author Korporasi 3
  */
 public class CtrlBarang {
-    
+    boolean window = false;
     
     public void addBarang(){
     
@@ -25,7 +25,8 @@ public class CtrlBarang {
     }
     
     public void showSearchForm(Barang barang ){
-    
+        
+    Window.show(window);
     
     
     }
