@@ -17,12 +17,11 @@ public class Window extends javax.swing.JFrame {
      * Creates new form Window
      */
     public Window() {
-        
         initComponents();
     }
     
     public void show(Window window){
-    
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,41 +32,22 @@ public class Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        viewbutton = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        viewbutton.setText("View");
-        viewbutton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewbuttonMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(viewbutton)
-                .addContainerGap(177, Short.MAX_VALUE))
+            .addGap(0, 525, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(viewbutton)
-                .addContainerGap(144, Short.MAX_VALUE))
+            .addGap(0, 322, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void viewbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewbuttonMouseClicked
-        
-      CB.showListBarang(this);  // TODO add your handling code here:
-    }//GEN-LAST:event_viewbuttonMouseClicked
+    
     
     
     /**
@@ -106,7 +86,6 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton viewbutton;
     // End of variables declaration//GEN-END:variables
 
     
