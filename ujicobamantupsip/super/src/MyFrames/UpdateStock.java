@@ -37,7 +37,7 @@ public class UpdateStock extends javax.swing.JInternalFrame {
         Connection con;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/qb","root","password");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             return con;
         } catch(Exception e)
         {
@@ -57,7 +57,7 @@ public class UpdateStock extends javax.swing.JInternalFrame {
             Stock stock;
             while(rs.next())
             {
-                stock = new Stock(rs.getString("id"),rs.getString("pname"),rs.getInt("available"),rs.getInt("mrp"));
+                stock = new Stock(rs.getString("idstock"),rs.getString("pname"),rs.getInt("available"),rs.getInt("mrp"));
                stockList.add(stock);
             }
             
@@ -270,7 +270,7 @@ public class UpdateStock extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     String query="INSERT INTO `stock`(id,`pname`,available,mrp) VALUES("+jTextField1.getText()+",'"+jTextField2.getText()+"',"+jTextField4.getText()+","+jTextField5.getText()+");";
+     String query="INSERT INTO `stock`(idstock,`pname`,available,mrp) VALUES("+jTextField1.getText()+",'"+jTextField2.getText()+"',"+jTextField4.getText()+","+jTextField5.getText()+");";
     executeSQlQuery(query, "Inserted");   // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -286,7 +286,7 @@ public class UpdateStock extends javax.swing.JInternalFrame {
                  
                                   
         String query;
-        query ="UPDATE `stock` SET `id`="+jTextField1.getText()+",`pname`='"+jTextField2.getText()+"',`available`="+jTextField3.getText()+",`mrp`="+jTextField5.getText()+" WHERE `id`="+jTextField1.getText();
+        query ="UPDATE `stock` SET `idstock`="+jTextField1.getText()+",`pname`='"+jTextField2.getText()+"',`available`="+jTextField3.getText()+",`mrp`="+jTextField5.getText()+" WHERE `id`="+jTextField1.getText();
     executeSQlQuery(query,"Update");   // TODO add your handling code here:*/
     }//GEN-LAST:event_jButton2ActionPerformed
 

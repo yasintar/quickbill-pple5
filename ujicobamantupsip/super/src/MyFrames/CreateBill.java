@@ -328,12 +328,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
 
     private void jComboBox2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBox2PopupMenuWillBecomeInvisible
      String tmp=(String)jComboBox2.getSelectedItem();
-     String sql1="SELECT * FROM `stock` WHERE `id`=?";
+     String sql1="SELECT * FROM `stock` WHERE `idstock`=?";
      Connection con;
    PreparedStatement pst;
    ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             pst=con.prepareStatement(sql1);  
             pst.setString(1, tmp);
             rs1=pst.executeQuery();
@@ -359,7 +359,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
    PreparedStatement pst;
    ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             pst=con.prepareStatement(sql1);  
             //pst.setInt(1, 20);
             rs1=pst.executeQuery();
@@ -386,7 +386,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
        Connection con;    
        Statement st;
        try{
-            con = con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+            con = con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
            st = con.createStatement();
            st.executeUpdate(query);
        }
@@ -415,12 +415,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
                  model.addRow(new Object[]{jTextField5.getText(),jTextField3.getText(),jTextField4.getText(),result});
                  getsum();
                  // Update query;
-                 String sql1="UPDATE `stock` SET `available`=`available` - '"+jTextField5.getText()+"' WHERE `id`='"+String.valueOf(jComboBox2.getSelectedItem())+"'";
+                 String sql1="UPDATE `stock` SET `available`=`available` - '"+jTextField5.getText()+"' WHERE `idstock`='"+String.valueOf(jComboBox2.getSelectedItem())+"'";
      Connection con;
    Statement st;
   // ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             st=con.createStatement();  
             //st.setString(1, tmp);
             st.executeUpdate(sql1);
@@ -449,7 +449,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
    Statement st;
   // ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             st=con.createStatement();  
             //st.setString(1, tmp);
             st.executeUpdate(sql1);
@@ -499,12 +499,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
    ResultSet rs;
         try
         {
-          con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
+          con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
             ps=con.prepareStatement(sql);  
             rs=ps.executeQuery();
             while(rs.next())
             {
-                String id=rs.getString("id");
+                String id=rs.getString("idstock");
                 jComboBox2.addItem(id);
             }
         }

@@ -158,8 +158,8 @@ public class AdminLogin extends javax.swing.JFrame {
    Connection con;
    PreparedStatement ps;
         try {
-            con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "root", "password");
-            ps=con.prepareStatement("SELECT `username`,`password` FROM `admin` WHERE `username`=? AND `password`=?;");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+            ps=con.prepareStatement("SELECT `username`,`password` FROM `admin` WHERE `username`=admin AND `password`=12345;");
             ps.setString(1,at1.getText());
             ps.setString(2, String.valueOf(at2.getPassword()));
             ResultSet rs=ps.executeQuery();

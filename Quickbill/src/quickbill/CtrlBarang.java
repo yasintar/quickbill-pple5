@@ -23,4 +23,8 @@ public class CtrlBarang {
         
     }
     
+    public void validate(Barang id){
+        
+    }
+    
 }

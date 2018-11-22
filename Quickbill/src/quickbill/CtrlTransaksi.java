@@ -23,6 +23,18 @@ public class CtrlTransaksi {
     
     }
     
+    public void showTransaksiForm(Transaksi id){
+        
+    }
+    
+    public void show(){
+        
+    }
+    
+    public void showPrintTransaksi(){
+        
+    }
+    
     public String getIdTransaksi(){
         String id = null;
     return id;
