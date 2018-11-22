@@ -35,19 +35,19 @@ public class Kasir {
         return nama;
     }
     
-    public int notelp(){
+    public int getnotelp(){
         return notelp;
     }
     
-    public String alamat(){
+    public String getalamat(){
         return alamat;
     }
     
-    public String email(){
+    public String getemail(){
         return email;
     }
     
-    public String password(){
+    public String getpass(){
         return password;
     }
     

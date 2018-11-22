@@ -35,7 +35,7 @@ public class Barang {
         return hargabarang;
     }
     
-    public int jumlah(){
+    public int getjumlah(){
         return jumlah;
     }
     
