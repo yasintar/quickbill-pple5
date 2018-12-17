@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2018 at 02:48 PM
+-- Generation Time: Dec 17, 2018 at 02:36 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -59,7 +59,8 @@ CREATE TABLE `bill` (
 
 INSERT INTO `bill` (`bno`, `cname`, `amt`, `pdate`) VALUES
 (1, 'asd', 123, '2018-12-05'),
-(2, 'asdfgh', 246, '2018-12-05');
+(2, 'asdfgh', 246, '2018-12-05'),
+(3, 'asdf', 123, '2018-12-05');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,8 @@ CREATE TABLE `stock` (
 --
 
 INSERT INTO `stock` (`id`, `pname`, `available`, `mrp`) VALUES
-(1, 'boyki', 4, 123);
+(1, 'boyki', 13, 123),
+(2, 'biskuat', 10, 100);
 
 --
 -- Indexes for dumped tables
