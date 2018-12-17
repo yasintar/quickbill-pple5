@@ -115,7 +115,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 102));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\SAMEER\\Desktop\\DeleteRed.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MyFrames/del.png"))); // NOI18N
         jButton2.setText("Remove");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
@@ -328,12 +328,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
 
     private void jComboBox2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBox2PopupMenuWillBecomeInvisible
      String tmp=(String)jComboBox2.getSelectedItem();
-     String sql1="SELECT * FROM `stock` WHERE `idstock`=?";
+     String sql1="SELECT * FROM `stock` WHERE `id`=?";
      Connection con;
    PreparedStatement pst;
    ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             pst=con.prepareStatement(sql1);  
             pst.setString(1, tmp);
             rs1=pst.executeQuery();
@@ -359,8 +359,9 @@ public class CreateBill extends javax.swing.JInternalFrame {
    PreparedStatement pst;
    ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
-            pst=con.prepareStatement(sql1);
+
+         con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
+            pst=con.prepareStatement(sql1);  
             //pst.setInt(1, 20);
             rs1=pst.executeQuery();
             while(rs1.next())
@@ -386,7 +387,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
        Connection con;    
        Statement st;
        try{
-            con = con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
            st = con.createStatement();
            st.executeUpdate(query);
        }
@@ -415,12 +416,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
                  model.addRow(new Object[]{jTextField5.getText(),jTextField3.getText(),jTextField4.getText(),result});
                  getsum();
                  // Update query;
-                 String sql1="UPDATE `stock` SET `available`=`available` - '"+jTextField5.getText()+"' WHERE `idstock`='"+String.valueOf(jComboBox2.getSelectedItem())+"'";
+                 String sql1="UPDATE `stock` SET `available`=`available` - '"+jTextField5.getText()+"' WHERE `id`='"+String.valueOf(jComboBox2.getSelectedItem())+"'";
      Connection con;
    Statement st;
   // ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+         con = DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             st=con.createStatement();  
             //st.setString(1, tmp);
             st.executeUpdate(sql1);
@@ -449,7 +450,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
    Statement st;
   // ResultSet rs1;
      try{
-         con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+         con = DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             st=con.createStatement();  
             //st.setString(1, tmp);
             st.executeUpdate(sql1);
@@ -499,12 +500,12 @@ public class CreateBill extends javax.swing.JInternalFrame {
    ResultSet rs;
         try
         {
-          con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+          con = DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             ps=con.prepareStatement(sql);  
             rs=ps.executeQuery();
             while(rs.next())
             {
-                String id=rs.getString("idstock");
+                String id=rs.getString("id");
                 jComboBox2.addItem(id);
             }
         }

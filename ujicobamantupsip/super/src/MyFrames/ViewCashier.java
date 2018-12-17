@@ -41,7 +41,7 @@ public class ViewCashier extends javax.swing.JInternalFrame {
         setTitle("View Cashier Detail");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("View Cashier Deatails");
+        jLabel1.setText("View Cashier Details");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Cashier Id");

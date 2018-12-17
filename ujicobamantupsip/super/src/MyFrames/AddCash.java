@@ -269,7 +269,7 @@ public class AddCash extends javax.swing.JInternalFrame {
         Connection con;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             return con;
         } catch(Exception e)
         {
