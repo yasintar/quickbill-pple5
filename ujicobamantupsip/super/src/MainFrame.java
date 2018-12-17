@@ -39,11 +39,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jButton5 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         desktop = new javax.swing.JDesktopPane();
         Cashview = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,6 +53,24 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenu5.setText("Edit");
         jMenuBar2.add(jMenu5);
+
+        jButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 0, 102));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sale.png"))); // NOI18N
+        jButton5.setText("Sales");
+        jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 102));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tran.png"))); // NOI18N
+        jButton3.setText("Transaction");
+        jButton3.setContentAreaFilled(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Quick Bill");
@@ -70,11 +88,11 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 710, Short.MAX_VALUE)
         );
 
-        getContentPane().add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 62, 1350, 710));
+        getContentPane().add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1350, 710));
 
         Cashview.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Cashview.setForeground(new java.awt.Color(0, 0, 102));
-        Cashview.setIcon(new javax.swing.ImageIcon("C:\\Users\\SAMEER\\Desktop\\1575_-_Cashier-32.png")); // NOI18N
+        Cashview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MyFrames/7-32.png"))); // NOI18N
         Cashview.setText("Cashier");
         Cashview.setBorder(null);
         Cashview.setContentAreaFilled(false);
@@ -84,13 +102,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Cashview, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 10, 130, 40));
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 102));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tran.png"))); // NOI18N
-        jButton3.setText("Transaction");
-        jButton3.setContentAreaFilled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 40));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 102));
@@ -102,15 +113,7 @@ public class MainFrame extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, 40));
-
-        jButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.disabledShadow"));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 102));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sale.png"))); // NOI18N
-        jButton5.setText("Sales");
-        jButton5.setContentAreaFilled(false);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, -1, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, 40));
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 0, 102));
@@ -133,6 +136,8 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void CashviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CashviewActionPerformed
        
         // TODO add your handling code here:
@@ -152,6 +157,13 @@ public class MainFrame extends javax.swing.JFrame {
         
         us.setVisible(true);  // stock add  TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         ViewStock vs=new ViewStock();
+        this.desktop.add(vs);
+        
+        vs.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

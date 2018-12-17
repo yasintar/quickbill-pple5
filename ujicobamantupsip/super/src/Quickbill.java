@@ -21,6 +21,8 @@ public class Quickbill extends javax.swing.JFrame {
         initComponents();
         this.setLocation(300,100);
     }
+
+   
     public void close(){
         WindowEvent winClosingEvent=new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
@@ -195,4 +197,6 @@ public class Quickbill extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+
 }
