@@ -360,7 +360,7 @@ public class CreateBill extends javax.swing.JInternalFrame {
    ResultSet rs1;
      try{
          con=DriverManager.getConnection("jdbc:mysql://localhost/olshop/quickbill", "root", "password");
-            pst=con.prepareStatement(sql1);  
+            pst=con.prepareStatement(sql1);
             //pst.setInt(1, 20);
             rs1=pst.executeQuery();
             while(rs1.next())
