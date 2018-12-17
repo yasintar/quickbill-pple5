@@ -133,7 +133,7 @@ public class MainFrame extends javax.swing.JFrame {
                 ExitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 30, 120, 40));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 23, 110, 40));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -143,7 +143,7 @@ public class MainFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 40, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 30, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imageedit_1_7245834402.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
