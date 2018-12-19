@@ -6,21 +6,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author SAMEER
- */
 public class AdminLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AdminLogin
-     */
+    /*Creates new form AdminLogin*/
     public AdminLogin() {
         initComponents();
         this.setLocation(400,90);
@@ -107,15 +95,15 @@ public class AdminLogin extends javax.swing.JFrame {
                     .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(192, 192, 192)
                 .addComponent(abtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(49, 49, 49))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(102, 102, 102)
@@ -125,9 +113,9 @@ public class AdminLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(51, 51, 51)
                 .addComponent(at1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -166,43 +154,43 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_at1ActionPerformed
 
     private void abtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abtnActionPerformed
- close();
-   Connection con;
-   PreparedStatement ps;
+        close();
+        Connection con;
+        PreparedStatement ps;
         try {
             con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             ps=con.prepareStatement("SELECT `username`,`password` FROM `admin` WHERE `username`=? AND `password`=?;");
             ps.setString(1,at1.getText());
             ps.setString(2, String.valueOf(at2.getPassword()));
             ResultSet rs=ps.executeQuery();
-            if(rs.next())
-            {  
-            MainFrame main=new MainFrame();
-            main.setVisible(true);  
-           }
+            if(rs.next()){  
+                AdminPage main=new AdminPage();
+                main.setVisible(true);  
+            }
             else
             {
-                 JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password");
             }
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             Logger.getLogger(AdminLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_abtnActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
- if(jCheckBox1.isSelected())
- {
-     at2.setEchoChar((char)0);
- }
- else{
-     at2.setEchoChar('*');
- } 
+        if(jCheckBox1.isSelected())
+        {
+            at2.setEchoChar((char)0);
+        }
+        else{
+            at2.setEchoChar('*');
+        } 
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-close();
+        close();
         Quickbill qb=new Quickbill();
-   qb.setVisible(true);        // TODO add your handling code here:
+        qb.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

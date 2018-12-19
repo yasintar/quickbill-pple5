@@ -1,16 +1,6 @@
 package MyFrames;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author SAMEER
- */
-public class Cash {
+public class Cashier {
 
     private int id;
     private String name;
@@ -19,7 +9,7 @@ public class Cash {
     private String email;
     private String password;
     
-    public Cash(int id,String name,String mno,String address,String email, String password)
+    public Cashier(int id,String name,String mno,String address,String email, String password)
     {
         this.id=id;
         this.name=name;
@@ -27,7 +17,6 @@ public class Cash {
         this.address=address;
         this.email=email;
         this.password=password;
-        
     }
             
     public int getid()

@@ -1,28 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package MyFrames;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author SAMEER
- */
-public class ProInfo extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form ProInfo
-     */
-    public ProInfo() {
+public class SearchProduct extends javax.swing.JInternalFrame {
+
+    public SearchProduct() {
         initComponents();
         
         this.setLocation(330,40);
         findproduct();
     }
-public Connection getConnection()
+    
+    public Connection getConnection()
     {
         Connection con;
         try{
@@ -34,7 +25,8 @@ public Connection getConnection()
            return null;
         }
     }
-public ArrayList<Product> List(String ValToSearch)
+    
+    public ArrayList<Product> List(String ValToSearch)
     {
         ArrayList<Product> pro = new ArrayList<Product>();
         Statement st;
@@ -65,6 +57,7 @@ public ArrayList<Product> List(String ValToSearch)
         return pro;
     
     }
+    
     public void findproduct()
         {
             ArrayList <Product> prod = List(jTextField1.getText());
@@ -109,7 +102,7 @@ public ArrayList<Product> List(String ValToSearch)
         jLabel1.setText("Product Information");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Product ");
+        jLabel2.setText("Product Id");
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -128,7 +121,7 @@ public ArrayList<Product> List(String ValToSearch)
 
             },
             new String [] {
-                "Product Id", "Product Name", "Available", "Mrp"
+                "Product Id", "Product Name", "Available", "Price/unit"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -140,26 +133,26 @@ public ArrayList<Product> List(String ValToSearch)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(42, 42, 42)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel1)))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(43, 43, 43)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

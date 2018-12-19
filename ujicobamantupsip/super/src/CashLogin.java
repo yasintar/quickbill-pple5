@@ -5,16 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author SAMEER
- */
+ 
 public class CashLogin extends javax.swing.JFrame {
 
     /**
@@ -159,7 +150,7 @@ public class CashLogin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         close();
         Connection con;
-   PreparedStatement ps;
+        PreparedStatement ps;
         try {
             con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             ps=con.prepareStatement("SELECT `email`,`password` FROM `cash` WHERE `email`=? AND `password`=?;");
@@ -168,13 +159,14 @@ public class CashLogin extends javax.swing.JFrame {
             ResultSet rs=ps.executeQuery();
             if(rs.next())
             {     
-        CashMain ca=new CashMain();
-     ca.setVisible(true);
+                CashPage ca=new CashPage();
+                ca.setVisible(true);
             }else
             {
                  JOptionPane.showMessageDialog(null, "Invalid Username or Password");
             }
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             Logger.getLogger(AdminLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
                                         
@@ -194,9 +186,9 @@ public class CashLogin extends javax.swing.JFrame {
 
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          close();
+        close();
         Quickbill qb=new Quickbill();
-   qb.setVisible(true); //go to CheckIn frame            // TODO add your handling code here:
+        qb.setVisible(true); //go to CheckIn frame            // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

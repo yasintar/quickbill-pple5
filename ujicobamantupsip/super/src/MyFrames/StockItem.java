@@ -1,30 +1,18 @@
 package MyFrames;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author SAMEER
- */
-public class Stock {
+public class StockItem {
 
     private String id;
     private String pname;
     private int available;
     private int mrp;
     
-    public Stock(String id,String pname,int available, int mrp)
+    public StockItem(String id,String pname,int available, int mrp)
     {
         this.id=id;
         this.pname=pname;
         this.available=available;
-        this.mrp=mrp;
-        
-        
+        this.mrp=mrp;   
     }
             
     public String getid()

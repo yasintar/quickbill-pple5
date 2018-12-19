@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package MyFrames;
 
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author SAMEER
- */
+
 public class SearchBill extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form SearchBill
-     */
+    
     public SearchBill() {
         initComponents();
         this.setLocation(400,45);
@@ -29,15 +20,16 @@ public class SearchBill extends javax.swing.JInternalFrame {
             Class.forName("com.mysql.jdbc.Driver");
             con=DriverManager.getConnection("jdbc:mysql://localhost/qb", "quickbill", "12345");
             return con;
-        } catch(Exception e)
+        } 
+        catch(Exception e)
         {
            return null;
         }
     }
     
-    public ArrayList<BillSearch> List(String ValToSearch)
+    public ArrayList<Bill> List(String ValToSearch)
     {
-        ArrayList<BillSearch> bsearch = new ArrayList<BillSearch>();
+        ArrayList<Bill> bsearch = new ArrayList<Bill>();
         Statement st;
         ResultSet rs;
         try{
@@ -46,12 +38,12 @@ public class SearchBill extends javax.swing.JInternalFrame {
              String query="SELECT * FROM `bill` WHERE `bno`="+jTextField1.getText()+";";
             rs=st.executeQuery(query);
             
-            BillSearch billsearch;
+            Bill billsearch;
             
             while(rs.next())
             {
-               billsearch = new BillSearch(
-                                rs.getInt("bno"), rs.getString("cname"),rs.getInt("amt"),rs.getString("pdate")
+               billsearch = new Bill(
+               rs.getInt("bno"), rs.getString("cname"),rs.getInt("amt"),rs.getString("pdate")
                ); 
                bsearch.add(billsearch);
             }
@@ -63,12 +55,12 @@ public class SearchBill extends javax.swing.JInternalFrame {
             System.out.println(e.getMessage());
         }
         return bsearch;
-    
+
     }
     
         public void findbill()
         {
-            ArrayList <BillSearch> bills = List(jTextField1.getText());
+            ArrayList <Bill> bills = List(jTextField1.getText());
             DefaultTableModel model = new DefaultTableModel();
             model.setColumnIdentifiers(new Object[]{"Billno","Customer Name","Amount","Date"});
             Object[] row =new Object [4] ;
@@ -111,13 +103,12 @@ public class SearchBill extends javax.swing.JInternalFrame {
         jLabel1.setText("Search bill");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setText("Bill No");
+        jLabel2.setText("Bill Id");
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 102));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SAMEER\\Desktop\\search-32.png")); // NOI18N
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +121,7 @@ public class SearchBill extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Bill No", "Customer Name", "Total Amount", "Date"
+                "Bill Id", "Customer Name", "Total Amount", "Date"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
